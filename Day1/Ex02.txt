@@ -1,0 +1,80 @@
+Setting environment for using XAMPP for Windows.
+ASUS@DESKTOP-701KO0U c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 13
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| uov                |
++--------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [(none)]> create database physician;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> use physician;
+Database changed
+MariaDB [physician]> create table physician(Physician_id CHAR(10),Name VARCHAR(30),Position VARCHAR(50));
+Query OK, 0 rows affected (0.013 sec)
+
+MariaDB [physician]> INSERT INTO physician VALUE('1','John Dorian','Staff Internist');
+Query OK, 1 row affected (0.012 sec)
+
+MariaDB [physician]> INSERT INTO physician VALUE('2','Elliot Reid','Attending Physician');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [physician]> INSERT INTO physician VALUE('3','Christopher Turk','Surgical Attending Physician');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [physician]> INSERT INTO physician VALUE('4','Percival Cox','Senior Attending Physician');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [physician]> INSERT INTO physician VALUE('5','Keith Dudemeister','MD resident');
+Query OK, 1 row affected (0.006 sec)
+
+MariaDB [physician]> INSERT INTO physician VALUE('6','Molly Clock','Attending Physician');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [physician]> select * from physician;
++--------------+-------------------+------------------------------+
+| Physician_id | Name              | Position                     |
++--------------+-------------------+------------------------------+
+| 1            | John Dorian       | Staff Internist              |
+| 2            | Elliot Reid       | Attending Physician          |
+| 3            | Christopher Turk  | Surgical Attending Physician |
+| 4            | Percival Cox      | Senior Attending Physician   |
+| 5            | Keith Dudemeister | MD resident                  |
+| 6            | Molly Clock       | Attending Physician          |
++--------------+-------------------+------------------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [physician]> DESC physician;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Physician_id | char(10)    | YES  |     | NULL    |       |
+| Name         | varchar(30) | YES  |     | NULL    |       |
+| Position     | varchar(50) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.025 sec)
+
+
+
+
+Conclusion
+
+We learn how to create a database ,Add data to the database on our own.
